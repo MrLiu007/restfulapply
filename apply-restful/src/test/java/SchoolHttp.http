@@ -1,0 +1,40 @@
+### 学校接口-查询全部学校
+GET http://localhost:8080/api/v1/schools
+Accept: application/json
+
+### 学校接口-查询指定学校
+GET http://localhost:8080/api/v1/schools/1
+Accept: application/json
+
+### 学校接口-删指定学校
+DELETE http://localhost:8080/api/v1/schools/1
+Accept: application/json
+
+### 学校接口-新增学校
+POST http://localhost:8080/api/v1/schools
+Accept: application/json
+Content-Type: application/json
+
+{
+  "schoolName" : "学校1",
+  "schoolAddress" : "西安",
+  "schoolType" : 2,
+  "schoolWebsite" : "https://github.com/MrLiu007"
+}
+
+### 学校接口-修改学校全部属性
+PUT http://localhost:8080/api/v1/schools
+Accept: application/json
+Content-Type: application/json
+
+{
+  "schoolNo" : 1,
+  "schoolName" : "学校1",
+  "schoolAddress" : "西安",
+  "schoolType" : 2,
+  "schoolWebsite" : "https://github.com/MrLiu007"
+}
+
+### 学校接口-修改学校网站
+PATCH http://localhost:8080/api/v1/schools/website/1?website = https://github.com/MrLiu007
+Accept: application/json

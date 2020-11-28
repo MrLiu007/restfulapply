@@ -1,0 +1,49 @@
+### 学校接口-批量查询指定学校
+GET http://localhost:8080/api/v2/schools/1,2,3
+Accept: application/json
+
+### 学校接口-批量删指定学校
+DELETE http://localhost:8080/api/v2/schools/1,2,3
+Accept: application/json
+
+### 学校接口-批量新增学校
+POST http://localhost:8080/api/v2/schools
+Accept: application/json
+Content-Type: application/json
+
+[
+  {
+    "schoolName" : "学校1",
+    "schoolAddress" : "西安",
+    "schoolType" : 2,
+    "schoolWebsite" : "https://github.com/MrLiu007"
+  },
+  {
+    "schoolName" : "学校2",
+    "schoolAddress" : "西安",
+    "schoolType" : 2,
+    "schoolWebsite" : "https://github.com/MrLiu007"
+  }
+]
+
+### 学校接口-批量修改学校全部属性
+PUT http://localhost:8080/api/v2/schools
+Accept: application/json
+Content-Type: application/json
+
+[
+  {
+    "schoolNo" : 1,
+    "schoolName" : "学校1",
+    "schoolAddress" : "西安",
+    "schoolType" : 2,
+    "schoolWebsite" : "https://github.com/MrLiu007"
+  },
+  {
+    "schoolNo" : 2,
+    "schoolName" : "学校2",
+    "schoolAddress" : "西安",
+    "schoolType" : 2,
+    "schoolWebsite" : "https://github.com/MrLiu007"
+  }
+]

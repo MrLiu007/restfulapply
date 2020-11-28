@@ -1,0 +1,23 @@
+### 用户角色接口-查询全部用户角色
+GET http://localhost:8080/api/v1/users/1/roles
+Accept: application/json
+
+### 用户角色接口-查询指定用户角色
+GET http://localhost:8080/api/v1/users/1/roles/1
+Accept: application/json
+
+### 用户角色接口-删指定用户角色
+DELETE http://localhost:8080/api/v1/users/1/roles/1
+Accept: application/json
+
+### 用户角色接口-新增用户角色
+POST http://localhost:8080/api/v1/users/1/roles/1
+Accept: application/json
+
+### 用户角色接口-修改用户角色
+PUT http://localhost:8080/api/v1/users/1/roles/2
+Accept: application/json
+
+### 用户角色接口-设置用户角色不可用
+PATCH http://localhost:8080/api/v1/users/1/roles/2?enabled = 1
+Accept: application/json

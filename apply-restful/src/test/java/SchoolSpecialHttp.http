@@ -1,0 +1,17 @@
+### 学校接口-批量查询指定学校
+GET http://localhost:8080/api/v3/schools
+Accept: application/json
+Content-Type: application/json
+
+[
+  1,2,3
+]
+
+### 学校接口-批量删指定学校
+DELETE http://localhost:8080/api/v3/schools
+Accept: application/json
+Content-Type: application/json
+
+[
+  1,2,3
+]

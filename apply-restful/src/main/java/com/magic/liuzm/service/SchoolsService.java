@@ -87,8 +87,8 @@ public class SchoolsService {
         if (input == null){
             return null;
         }
-        input.setSchoolNo(10);
-        input.setSchoolName(input.getSchoolName() + 10);
+        input.setSchoolNo(1);
+        input.setSchoolName(input.getSchoolName() + 1);
         input.setSchoolType(2);
         return input;
     }

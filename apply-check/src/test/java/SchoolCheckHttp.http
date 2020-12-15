@@ -1,0 +1,61 @@
+### 学校接口-修改学校网站
+PATCH http://localhost:8080/check/v1/schools/tel/1?tel = "1331*********"
+Accept: application/json
+
+### 学校接口-新增学校-简单例子
+POST http://localhost:8080/check/v1/schools
+Accept: application/json
+Content-Type: application/json
+
+{
+  "schoolName" : ""
+}
+
+
+### 学校接口-新增学校-嵌套例子
+POST http://localhost:8080/check/v1/schools
+Accept: application/json
+Content-Type: application/json
+
+{
+  "schoolName": "希望小学",
+  "cars": [{
+    "name": "张三",
+    "tel": "1321*********"
+  }],
+  "master": {
+    "name": "李四",
+    "tel": "1331*********",
+    "undergo": "****"
+  }
+
+}
+
+### 学校接口-新增学校-简单例子(异常捕获)
+POST http://localhost:8080/check/v2/schools
+Accept: application/json
+Content-Type: application/json
+
+{
+  "schoolName" : ""
+}
+
+
+### 学校接口-新增学校-嵌套例子(异常捕获)
+POST http://localhost:8080/check/v2/schools
+Accept: application/json
+Content-Type: application/json
+
+{
+  "schoolName": "希望小学",
+  "cars": [{
+    "name": "张三",
+    "tel": "1321*********"
+  }],
+  "master": {
+    "name": "李四",
+    "tel": "1331*********",
+    "undergo": "****"
+  }
+
+}

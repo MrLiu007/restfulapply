@@ -1,7 +1,7 @@
 package com.magic.liuzm.controller;
 
 import com.google.common.collect.Lists;
-import com.magic.liuzm.base.HttpCodeEnum;
+import com.magic.liuzm.enums.HttpCodeEnum;
 import com.magic.liuzm.dto.Response;
 import com.magic.liuzm.dto.SchoolDTO;
 import com.magic.liuzm.service.SchoolsService;
@@ -29,7 +29,7 @@ public class SchoolsSpecialController {
     @GetMapping("/schools")
     public Response<List<SchoolDTO>> querySchool(@RequestBody Integer[] schoolNos) {
         if(schoolNos == null || schoolNos.length == 0){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 批量查询指定学校信息
         List<SchoolDTO> result = schoolsService.getSchoolByNos(Lists.newArrayList(schoolNos));
@@ -40,7 +40,7 @@ public class SchoolsSpecialController {
     @DeleteMapping("/schools")
     public Response deleteSchool(@RequestBody Integer[] schoolNos) {
         if(schoolNos == null || schoolNos.length == 0){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 批量删除学校
         boolean result = schoolsService.deleteSchools(Lists.newArrayList(schoolNos));

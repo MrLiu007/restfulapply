@@ -1,6 +1,6 @@
 package com.magic.liuzm.dto;
 
-import com.magic.liuzm.base.HttpCodeEnum;
+import com.magic.liuzm.enums.HttpCodeEnum;
 import lombok.Data;
 
 /**

@@ -4,9 +4,52 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.magic.liuzm</groupId>
     <artifactId>apply-mock</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>com.magic.liuzm</groupId>
+        <artifactId>restfulapply</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <apply.common.version>1.0-SNAPSHOT</apply.common.version>
+        <spring-test.version>5.2.7.RELEASE</spring-test.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.magic.liuzm</groupId>
+            <artifactId>apply-common</artifactId>
+            <version>${apply.common.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.magic.liuzm</groupId>
+            <artifactId>apply-restful</artifactId>
+            <version>${apply.common.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <!--这里要和apply.common中springboot版本一样-->
+            <version>2.3.5.RELEASE</version>
+            <!--表示只能在maven的测试域中使用-->
+            <scope>compile</scope>
+            <exclusions>
+                <!--这个是JUnit5中为了支持使用JUint4所做的一个过度
+                 也就是说，你只需要在你的JUnit4旧项目中添加这个依赖，
+                 就能完美过渡，而不用修改之前代码
+                 这里用不到，自然也就排除了-->
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
 
 </project>

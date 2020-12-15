@@ -1,7 +1,7 @@
 package com.magic.liuzm.controller;
 
 import com.google.common.collect.Lists;
-import com.magic.liuzm.base.HttpCodeEnum;
+import com.magic.liuzm.enums.HttpCodeEnum;
 import com.magic.liuzm.dto.Response;
 import com.magic.liuzm.dto.SchoolDTO;
 import com.magic.liuzm.service.SchoolsService;
@@ -28,7 +28,7 @@ public class SchoolsExController {
     @GetMapping("/schools/{ids}")
     public Response<List<SchoolDTO>> querySchool(@PathVariable(value = "ids", required = true) Integer[] schoolNos) {
         if(schoolNos == null || schoolNos.length == 0){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 批量查询指定学校信息
         List<SchoolDTO> result = schoolsService.getSchoolByNos(Lists.newArrayList(schoolNos));
@@ -39,7 +39,7 @@ public class SchoolsExController {
     @DeleteMapping("/schools/{ids}")
     public Response deleteSchool(@PathVariable(value = "ids", required = true) Integer[] schoolNos) {
         if(schoolNos == null || schoolNos.length == 0){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 批量删除学校
         boolean result = schoolsService.deleteSchools(Lists.newArrayList(schoolNos));
@@ -50,7 +50,7 @@ public class SchoolsExController {
     @PostMapping("/schools")
     public Response<List<SchoolDTO>> createSchool(@RequestBody List<SchoolDTO> input) {
         if(CollectionUtils.isEmpty(input)){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 批量添加学校
         List<SchoolDTO> result = schoolsService.createSchool(input);
@@ -61,7 +61,7 @@ public class SchoolsExController {
     @PutMapping("/schools")
     public Response updateSchool(@RequestBody List<SchoolDTO> input) {
         if(CollectionUtils.isEmpty(input)){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 批量修改学校的全部信息
         boolean result = schoolsService.updateSchools(input);

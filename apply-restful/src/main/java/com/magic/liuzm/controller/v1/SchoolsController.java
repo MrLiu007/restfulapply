@@ -1,6 +1,6 @@
-package com.magic.liuzm.controller;
+package com.magic.liuzm.controller.v1;
 
-import com.magic.liuzm.base.HttpCodeEnum;
+import com.magic.liuzm.enums.HttpCodeEnum;
 import com.magic.liuzm.dto.Response;
 import com.magic.liuzm.dto.SchoolDTO;
 import com.magic.liuzm.service.SchoolsService;
@@ -16,7 +16,10 @@ import java.util.List;
  * @date 2020/11/24 10:46
  * @description 学校接口（v1版本）
  *
- * 参考：http://www.restfulapi.nl/laravel/angularjs/employees/api/v1
+ * resultFul 参考：http://www.restfulapi.nl/laravel/angularjs/employees/api/v1
+ *
+ * 若想通过aop对接口操作，可参考：https://github.com/MrLiu007/aopapply
+ *
  */
 @RestController
 @RequestMapping("/api/v1")
@@ -28,7 +31,7 @@ public class SchoolsController {
     @PostMapping("/schools")
     public Response<SchoolDTO> createSchool(@RequestBody SchoolDTO input) {
         if(input == null){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 添加学校
         SchoolDTO result = schoolsService.createSchool(input);
@@ -39,7 +42,7 @@ public class SchoolsController {
     @DeleteMapping("/schools/{id}")
     public Response deleteSchool(@PathVariable(value = "id", required = true) Integer schoolNo) {
         if(schoolNo == null){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 删除学校
         boolean result = schoolsService.deleteSchool(schoolNo);
@@ -50,7 +53,7 @@ public class SchoolsController {
     @PutMapping("/schools")
     public Response updateSchool(@RequestBody SchoolDTO input) {
         if(input == null || input.getSchoolNo() == null){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 修改学校的全部信息
         boolean result = schoolsService.updateSchool(input);
@@ -62,7 +65,7 @@ public class SchoolsController {
     public Response updateSchool(@PathVariable(name = "id", required = true) Integer schoolNo,
                                  @RequestParam(name = "website", required = true) String webSite) {
         if(schoolNo == null || StringUtils.isEmpty(webSite)){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 仅修改学校网站
         SchoolDTO input = new SchoolDTO();
@@ -84,7 +87,7 @@ public class SchoolsController {
     @GetMapping("/schools/{id}")
     public Response<SchoolDTO> querySchool(@PathVariable(value = "id", required = true) Integer schoolNo) {
         if(schoolNo == null){
-            Response.error(HttpCodeEnum.BAD_REQUEST);
+            return Response.error(HttpCodeEnum.BAD_REQUEST);
         }
         // 查询单个指定学校信息
         SchoolDTO result  = schoolsService.getSchoolByNo(schoolNo);

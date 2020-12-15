@@ -1,4 +1,4 @@
-package com.magic.liuzm.base;
+package com.magic.liuzm.enums;
 
 /**
  * @author zemin.liu

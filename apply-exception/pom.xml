@@ -4,9 +4,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.magic.liuzm</groupId>
     <artifactId>apply-exception</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>com.magic.liuzm</groupId>
+        <artifactId>restfulapply</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
+    <properties>
+        <apply.common.version>1.0-SNAPSHOT</apply.common.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.magic.liuzm</groupId>
+            <artifactId>apply-common</artifactId>
+            <version>${apply.common.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.magic.liuzm</groupId>
+            <artifactId>apply-check</artifactId>
+            <version>${apply.common.version}</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -1,0 +1,11 @@
+{
+  "code": 200,
+  "message": null,
+  "data": {
+    "schoolNo": 1,
+    "schoolName": "学校1",
+    "schoolAddress": "陕西西安",
+    "schoolType": 2,
+    "schoolWebsite": "https://github.com/MrLiu007"
+  }
+}

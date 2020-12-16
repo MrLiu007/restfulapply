@@ -7,6 +7,7 @@ package com.magic.liuzm.enums;
  *
  *
  * 参考：
+ * Spring：org.springframework.http.HttpStatus
  * 阿里云：https://help.aliyun.com/document_detail/25491.html
  * github：https://developer.github.com/v3/#client-errors
  * microsoft：https://github.com/Microsoft/api-guidelines/blob/vNext/Guidelines.md#711-http-status-codes

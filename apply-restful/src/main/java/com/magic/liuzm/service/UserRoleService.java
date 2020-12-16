@@ -1,6 +1,7 @@
 package com.magic.liuzm.service;
 
 import com.google.common.collect.Lists;
+import com.magic.liuzm.BizException;
 import com.magic.liuzm.dto.RoleDTO;
 import com.magic.liuzm.dto.UserDTO;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class UserRoleService {
      * @param roleId
      * @return com.magic.liuzm.dto.RoleDTO
      */
-    public UserDTO createUserRole(Integer userId,Integer roleId) {
+    public UserDTO createUserRole(Integer userId,Integer roleId) throws BizException {
         if(userId == null || roleId == null){
             return null;
         }
@@ -50,7 +51,7 @@ public class UserRoleService {
      * @param roleId
      * @return boolean
      */
-    public boolean deleteUserRole(Integer userId, Integer roleId) {
+    public boolean deleteUserRole(Integer userId, Integer roleId) throws BizException {
         if(userId == null || roleId == null){
             return false;
         }
@@ -65,7 +66,7 @@ public class UserRoleService {
      * @param roleId
      * @return boolean
      */
-    public boolean updateUserRole(Integer userId, Integer roleId) {
+    public boolean updateUserRole(Integer userId, Integer roleId) throws BizException {
         if(userId == null || roleId == null){
             return false;
         }
@@ -81,7 +82,7 @@ public class UserRoleService {
      * @param enabled 0-可用；1-不可用
      * @return boolean
      */
-    public boolean updateUserRole(Integer userId, Integer roleId,Integer enabled) {
+    public boolean updateUserRole(Integer userId, Integer roleId,Integer enabled) throws BizException {
         if(userId == null || roleId == null || enabled == null){
             return false;
         }
@@ -95,7 +96,7 @@ public class UserRoleService {
      * @param
      * @return com.magic.liuzm.dto.UserDTO
      */
-    public UserDTO queryUserRoles() {
+    public UserDTO queryUserRoles() throws BizException {
         UserDTO result = new UserDTO();
         result.setUserId(1);
 
@@ -126,7 +127,7 @@ public class UserRoleService {
      * @param roleId
      * @return com.magic.liuzm.dto.UserDTO
      */
-    public UserDTO queryUserRole(Integer userId, Integer roleId) {
+    public UserDTO queryUserRole(Integer userId, Integer roleId) throws BizException {
         if(userId == null || roleId == null){
             return null;
         }

@@ -1,6 +1,7 @@
 package com.magic.liuzm.service;
 
 import com.google.common.collect.Lists;
+import com.magic.liuzm.BizException;
 import com.magic.liuzm.dto.SchoolDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -21,7 +22,7 @@ public class SchoolsService {
      * @date 2020/11/24 11:31
      * @return java.util.List<com.magic.liuzm.dto.SchoolDTO>
      */
-    public List<SchoolDTO> getSchools() {
+    public List<SchoolDTO> getSchools() throws BizException {
         List result = Lists.newArrayList();
         for(int i = 0; i < 10 ; i++){
             SchoolDTO data = new SchoolDTO();
@@ -42,7 +43,7 @@ public class SchoolsService {
      * @param schoolNo
      * @return com.magic.liuzm.dto.SchoolDTO
      */
-    public SchoolDTO getSchoolByNo(Integer schoolNo) {
+    public SchoolDTO getSchoolByNo(Integer schoolNo) throws BizException {
         if(schoolNo == null){
             return null;
         }
@@ -62,7 +63,7 @@ public class SchoolsService {
      * @param schoolNos
      * @return com.magic.liuzm.dto.SchoolDTO
      */
-    public List<SchoolDTO> getSchoolByNos(List<Integer> schoolNos) {
+    public List<SchoolDTO> getSchoolByNos(List<Integer> schoolNos) throws BizException {
         List result = Lists.newArrayList();
         schoolNos.forEach(schoolNo ->{
             SchoolDTO data = new SchoolDTO();
@@ -83,7 +84,7 @@ public class SchoolsService {
      * @param input
      * @return com.magic.liuzm.dto.SchoolDTO
      */
-    public SchoolDTO createSchool(SchoolDTO input) {
+    public SchoolDTO createSchool(SchoolDTO input) throws BizException {
         if (input == null){
             return null;
         }
@@ -100,7 +101,7 @@ public class SchoolsService {
      * @param input
      * @return com.magic.liuzm.dto.SchoolDTO
      */
-    public List<SchoolDTO> createSchool(List<SchoolDTO> input) {
+    public List<SchoolDTO> createSchool(List<SchoolDTO> input) throws BizException {
         if (input == null || input.size() == 0){
             return null;
         }
@@ -122,7 +123,7 @@ public class SchoolsService {
      * @param schoolNo
      * @return boolean
      */
-    public boolean deleteSchool(Integer schoolNo) {
+    public boolean deleteSchool(Integer schoolNo) throws BizException {
         if(schoolNo == null){
             return false;
         }
@@ -136,7 +137,7 @@ public class SchoolsService {
      * @param schoolNos
      * @return boolean
      */
-    public boolean deleteSchools(List<Integer> schoolNos) {
+    public boolean deleteSchools(List<Integer> schoolNos) throws BizException {
         if(CollectionUtils.isEmpty(schoolNos)){
             return false;
         }
@@ -150,7 +151,7 @@ public class SchoolsService {
      * @param input
      * @return boolean
      */
-    public boolean updateSchool(SchoolDTO input) {
+    public boolean updateSchool(SchoolDTO input) throws BizException {
         if(input == null || input.getSchoolNo() == null){
             return false;
         }
@@ -164,7 +165,7 @@ public class SchoolsService {
      * @param input
      * @return boolean
      */
-    public boolean updateSchools(List<SchoolDTO> input) {
+    public boolean updateSchools(List<SchoolDTO> input) throws BizException {
         if(CollectionUtils.isEmpty(input)){
             return false;
         }

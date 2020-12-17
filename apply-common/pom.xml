@@ -12,6 +12,7 @@
         <guava.version>20.0</guava.version>
         <lombok.version>1.18.16</lombok.version>
         <fastjson.version>1.2.73</fastjson.version>
+        <commons-io.version>2.6</commons-io.version>
     </properties>
 
     <dependencies>
@@ -34,6 +35,12 @@
             <version>${fastjson.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>

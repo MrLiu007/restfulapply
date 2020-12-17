@@ -1,0 +1,18 @@
+### 文件上传
+POST http://localhost:8080/file/v1/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="file.txt"
+
+< ../resources/file/source.txt
+--WebAppBoundary--
+
+###
+
+
+### 文件下载
+GET http://localhost:8080/file/v1/download/source
+Accept: application/json
+
+###

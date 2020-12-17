@@ -7,16 +7,16 @@ SpingBoot 2.3.5.RELEASE
 ## Introduction
 
 [apply-restful] 
-restful api实例
+restful api例子
 
 [apply-check] 
-check param
+check param例子
 
 [apply-exception]
 exception catch
 
 [apply-mock]
-controller mock
+controller mock例子
 
 [apply-wiremock]
 wiremock使用例子

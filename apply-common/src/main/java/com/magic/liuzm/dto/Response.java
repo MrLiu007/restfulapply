@@ -80,13 +80,12 @@ public class Response<T> {
      * @author zemin.liu
      * @description 封装成功返回(无数据返回)
      * @date 2020/11/26 20:39
-     * @param message
      * @return com.magic.liuzm.dto.Response
      */
-    public static Response ok(String message){
+    public static Response ok(){
         Response response = new Response();
         response.setCode(HttpCodeEnum.OK.getCode());
-        response.setMessage(message);
+        response.setMessage(HttpCodeEnum.OK.getHintCN());
 
         return response;
     }

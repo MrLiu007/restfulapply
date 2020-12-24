@@ -1,5 +1,5 @@
 # restful
-笔记工程：restful api实例 + check param + exception catch + wiremock使用例子 + controller mock
+笔记工程：restful api实例 + 异步api（包含callable，future，servlet3.1，webflux，DeferredResult） + check param + exception catch + wiremock使用例子 + controller mock
 
 ## 项目版本
 SpingBoot 2.3.5.RELEASE
@@ -7,7 +7,7 @@ SpingBoot 2.3.5.RELEASE
 ## Introduction
 
 [apply-restful] 
-restful api例子
+restful api例子（入口）
 
 [apply-check] 
 check param例子

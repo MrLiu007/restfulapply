@@ -22,7 +22,7 @@ public enum HttpCodeEnum {
     /**
      * 支持每种操作
      */
-    OK(200,"OK","表示操作成功"),
+    OK(200,"OK","操作成功"),
 
     /**
      * 支持POST操作

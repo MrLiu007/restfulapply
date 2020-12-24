@@ -1,0 +1,46 @@
+### 下单接口-DeferredResult
+POST http://localhost:8080/asyn/v1/orders/1
+Accept: application/json
+Content-Type: application/json
+
+###
+
+### 下单接口-Callable
+POST http://localhost:8080/asyn/v2/orders/1
+Accept: application/json
+Content-Type: application/json
+
+###
+
+### 下单接口-FutureTask
+POST http://localhost:8080/asyn/v3/orders/1
+Accept: application/json
+Content-Type: application/json
+
+###
+
+### 下单接口-CompletableFuture
+POST http://localhost:8080/asyn/v3/orders2/1
+Accept: application/json
+Content-Type: application/json
+
+###
+
+### 异步接口-Servlet3.1
+GET http://localhost:8080/asyn/v4/orders
+
+###
+
+### 异步接口-webflux
+POST http://localhost:8080/asyn/v5/orders/1
+Accept: application/json
+Content-Type: application/json
+
+###
+
+### 异步接口-webflux
+GET http://localhost:8080/asyn/v5/orders/1,2,3,4,5
+Accept: application/json
+Content-Type: application/json
+
+###
